@@ -18,7 +18,10 @@ export default defineConfig(async ({ mode }) => {
     }
     dotenv.config()
     return {
+        // base: '/smarthono', // Set base path
+        // root: 'smarthono', // Set root directory
         plugins: [react()],
+
         resolve: {
             alias: {
                 '@': resolve(__dirname, 'src')
@@ -26,7 +29,8 @@ export default defineConfig(async ({ mode }) => {
         },
         root: resolve(__dirname),
         build: {
-            outDir: './build'
+            outDir: './build',
+            assetsDir: './smarthono/assets'
         },
         server: {
             open: true,

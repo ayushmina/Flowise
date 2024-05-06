@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    flowise:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '3010:3010'
+        environment:
+            - PUPPETEER_SKIP_DOWNLOAD=true
+            - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+        command: pnpm start
